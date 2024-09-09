@@ -1,13 +1,11 @@
 import React from "react";
 
-import { Layout } from "./layout";
+import "normalize.css";
+
+import { MainPage } from "./pages/MainPage";
 
 const App = () => {
-  return (
-    <div>
-      <Layout />
-    </div>
-  );
+  return <MainPage />;
 };
 
 export default App;
