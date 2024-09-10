@@ -1,0 +1,19 @@
+.card {
+  display: block;
+  width: 100%;
+}
+
+.title {
+  text-transform: lowercase;
+
+  &:before {
+    content: ".";
+    display: inline-block;
+    margin: 0 5px;
+    color: var(--secondary-color);
+  }
+}
+
+.content {
+  display: block;
+}

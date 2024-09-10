@@ -4,7 +4,7 @@ import styles from "./style.module.scss";
 export const CommandLine = () => {
   const [value, setValue] = useState("");
 
-  const onChange = (event) => {
+  const onChange = (event: any) => {
     setValue(event.target.value);
   };
 

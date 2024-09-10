@@ -4,7 +4,7 @@ $headers: "h1" 96px -1.5px, "h2" 60px -0.5px, "h3" 48px 0, "h4" 34px 0.25px,
 @each $header, $size, $spacings in $headers {
   #{$header} {
     font-family: var(--primary-font);
-    font-weight: 200;
+    font-weight: 500;
     font-style: normal;
     font-size: $size;
     letter-spacing: $spacings;
