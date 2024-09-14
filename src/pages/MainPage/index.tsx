@@ -21,8 +21,8 @@ export const MainPage = (): JSX.Element => {
         <Typography tag="h1">Dmytro Onishchenko</Typography>
       </header>
       <section className={style.content}>
-        <Experience />
         <About />
+        <Experience />
         <Education />
         <Summary />
         <Skills />

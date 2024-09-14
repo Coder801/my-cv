@@ -6,7 +6,7 @@ type ExperienceCardProps = {
   position: string;
   company: string;
   period: string;
-  description: string;
+  description?: string;
   skills?: string[];
 };
 
@@ -17,13 +17,15 @@ export const ExperienceCard = ({
   description,
   skills,
 }: ExperienceCardProps) => (
-  <article>
+  <article className={styles.content}>
     <p className={styles.position}>{position}</p>
     <p className={styles.company}>
-      <small>{company}</small>
+      <strong>{company}</strong> |{" "}
+      <em>
+        <mark>{period}</mark>
+      </em>
     </p>
-    <p className={styles.period}>{period}</p>
-    <p className={styles.description}>{description}</p>
-    <p className={styles.skills}>{skills && skills.join(", ")}</p>
+    {description && <p className={styles.description}>{description}</p>}
+    {skills?.length && <p className={styles.skills}>{skills.join(", ")}</p>}
   </article>
 );

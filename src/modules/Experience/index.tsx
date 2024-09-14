@@ -7,51 +7,49 @@ const tempData = [
   {
     position: "Senior Software Engineer",
     company: "Aura",
-    period: "2021-10 – 2024-05",
+    period: "2021-10 - 2024-05",
     description:
-      "Work on complex solutions in the field of user security. Creation and support of applications. Development of browser extensions.",
+      "Work on complex solutions in the field of user security. Creation and support of applications. Development of browser extensions for communication between desktop and web-interfaces.",
+    skills: ["JavaScript", "Browser Extensions", "PWA"],
   },
   {
-    position: "Senior Software Engineering",
+    position: "Senior Software Engineer",
     company: "EPAM Systems",
-    period: "2020-02 – 2021-09-",
+    period: "2020-02 - 2021-09",
     description:
-      " Work on complex solutions in the field of user security. Creation and support of applications. Development of browser extensions.",
+      "Worked on several large projects as an outsourcing developer. Developed high-load web applications from scratch. Supported ongoing projects. Collaborated and interacted with various teams and clients.",
+    skills: ["React/Redux", "JavaScript", "Django", "NodeJS"],
   },
   {
-    position: "Frontend Developer",
+    position: "Software Engineer",
     company: "ZEO Alliance ",
     period: "2016-08 - 2021-10",
     description:
-      "Creating web and mobile application. Full Front-end development.",
+      "Worked as a frontend developer in a product company, beginning in the marketing department. Focused on creating user-friendly and visually appealing web interfaces to enhance customer engagement and drive conversions. Later transitioning to the R&D department. Focus shifted towards more experimental and cutting-edge projects. Prototyping, researching new technologies, and developing solutions.",
+    skills: ["React/Redux", "JavaScript", "Electron"],
   },
   {
     position: "Frontend Developer",
     company: "ARIO Industrial Inc",
     period: "2013-05 - 2016-07",
     description:
-      "Frontend Developer Experience working in large-scale projects and commercial sites. Development of adaptive websites and mobile applications. Development of templates",
+      "Work orient in large-scale projects and commercial sites. Creating e-commerce websites. Development of adaptive websites and mobile applications.",
+    skills: ["JavaScript", "Symfony"],
   },
   {
-    position: "Freelancer",
-    company: "Freelancer",
-    period: "2012-06 - 2013-04",
-    description:
-      "Freelancer Freelancer Work in a team of developers. Creation of web templates and applications. Development of web sites CMS (Wordpress, Prestashop, Drupal). Assistance in optimization and promotion",
-  },
-  {
-    position: "HTML/CSS Markup developer",
+    position: "Markup developer",
     company: "GeeksForLess Inc",
     period: "2011-11 - 2012-06",
     description:
-      "HTML Coder Created web page layouts(convertion from PSD to HTML), advertising material and logos from the ground up based on project requirements.",
+      "Кesponsible for creating and coding web pages. Work involved accurately converting designs from mockups into clean and semantically correct HTML, CSS and JS code. Created web page layouts, advertising material and logos from the ground up based on project requirements.",
   },
   {
     position: "Data-analist",
-    company: "GeeksForLess - Fetch Technologies",
+    company: "Fetch Technologies",
     period: "2011-04 - 2011-10",
     description:
-      "Data-analist Agents creation for the data extraction from external sources. Transformation and cleaning with the subsequent loading in the SQL base. Databases technologies(SQL etc), XML, Javascript, ETL frameworks",
+      "Responsible for collecting data and organizing it into tables for further analysis. Developed web scraping agents, which involved writing scripts to automatically extract data from web pages.",
+    skills: ["JavaScript", "MSSQL", "RegExp"],
   },
 ];
 
