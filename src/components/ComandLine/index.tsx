@@ -1,5 +1,23 @@
-import React, { useState } from "react";
-import styles from "./style.module.scss";
+import { useState } from "react";
+import styled from "styled-components";
+
+const S = {
+  Input: styled.input`
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    caret-color: var(--text-color);
+    color: var(--text-color);
+    border-radius: 0;
+    outline: 0;
+  `,
+  Value: styled.section`
+    display: block;
+  `,
+};
 
 export const CommandLine = () => {
   const [value, setValue] = useState("");
@@ -10,14 +28,13 @@ export const CommandLine = () => {
 
   return (
     <>
-      <input
-        className={styles.input}
+      <S.Input
         value={value}
         placeholder="Try natural language instead the command"
         onChange={onChange}
         type="text"
       />
-      <div>{value}</div>
+      <S.Value>{value}</S.Value>
     </>
   );
 };

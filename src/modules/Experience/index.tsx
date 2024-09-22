@@ -1,9 +1,7 @@
 import { Card } from "@components/Card";
 import { ExperienceCard } from "@components/ExperienceCard";
 
-import styles from "./style.module.scss";
-
-const tempData = [
+const data = [
   {
     position: "Senior Software Engineer",
     company: "Aura",
@@ -41,7 +39,7 @@ const tempData = [
     company: "GeeksForLess Inc",
     period: "2011-11 - 2012-06",
     description:
-      "Кesponsible for creating and coding web pages. Work involved accurately converting designs from mockups into clean and semantically correct HTML, CSS and JS code. Created web page layouts, advertising material and logos from the ground up based on project requirements.",
+      "Responsible for creating and coding web pages. Work involved accurately converting designs from mockups into clean and semantically correct HTML, CSS and JS code. Created web page layouts, advertising material and logos from the ground up based on project requirements.",
   },
   {
     position: "Data-analist",
@@ -54,16 +52,14 @@ const tempData = [
 ];
 
 export const Experience = () => (
-  <>
-    <Card title="Work Experience">
-      {tempData.map(({ position, company, period, description }) => (
-        <ExperienceCard
-          position={position}
-          company={company}
-          period={period}
-          description={description}
-        />
-      ))}
-    </Card>
-  </>
+  <Card title="Work Experience">
+    {data.map(({ position, company, period, description }) => (
+      <ExperienceCard
+        position={position}
+        company={company}
+        period={period}
+        description={description}
+      />
+    ))}
+  </Card>
 );

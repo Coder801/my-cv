@@ -1,8 +1,6 @@
 import { Card } from "@components/Card";
 import { ExperienceCard } from "@components/ExperienceCard";
 
-import styles from "./style.module.scss";
-
 export const Education = () => (
   <Card title="Education">
     <ExperienceCard

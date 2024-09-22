@@ -1,16 +1,16 @@
 import { Card } from "@components/Card";
 
-import styles from "./style.module.scss";
+import { Typography } from "@ui/Typography";
 
 export const Skills = () => (
   <Card title="Skills">
-    <h4>Frontend Developer</h4>
-    <h5>Company</h5>
-    <p>
+    <Typography tag="h4">Frontend Developer</Typography>
+    <Typography tag="h5">Company</Typography>
+    <Typography>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil at officiis
       sunt totam tempora voluptatum sit exercitationem eveniet nostrum illum,
       nesciunt aperiam! Similique, voluptates repellat accusamus sint vitae eius
       nisi!
-    </p>
+    </Typography>
   </Card>
 );

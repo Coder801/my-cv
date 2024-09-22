@@ -1,9 +1,19 @@
-import React from "react";
-import styles from "./style.module.scss";
+import styled from "styled-components";
+
+const S = {
+  List: styled.ul`
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+    font-size: 16px;
+    color: var(--color5);
+    text-align: right;
+  `,
+};
 
 export const Lines = () => {
   return (
-    <ul className={styles.list}>
+    <S.List>
       <li>1</li>
       <li>2</li>
       <li>3</li>
@@ -23,6 +33,6 @@ export const Lines = () => {
       <li>17</li>
       <li>18</li>
       <li>19</li>
-    </ul>
+    </S.List>
   );
 };
