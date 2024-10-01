@@ -4,8 +4,8 @@ import { Summary } from "@modules/Summary";
 import { Experience } from "@modules/Experience";
 import { Skills } from "@modules/Skills";
 
-import { Lines } from "@components/Lines";
-import { CommandLine } from "@components/ComandLine";
+import { CommandLine } from "@components/CommandLine";
+import { Terminal } from "@components/Terminal";
 
 import { Typography } from "@ui/Typography";
 
@@ -16,24 +16,25 @@ const S = {
     background-color: #2b293c;
     width: 100%;
     height: 100%;
+    padding: 0 15px;
     min-height: 100vh;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 50px 1fr;
-    grid-template-rows: 100px 1fr 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 30px;
     grid-template-areas:
-      "lines header"
-      "lines content"
-      "command command";
+      "header"
+      "content"
+      "command";
   `,
   Header: styled.header`
     grid-area: header;
   `,
-  Lines: styled.aside`
-    grid-area: lines;
-  `,
   Content: styled.section`
+    display: flex;
+    align-items: end;
     grid-area: content;
+    border: 1px solid white;
   `,
   Command: styled.aside`
     grid-area: command;
@@ -43,22 +44,20 @@ const S = {
 export const MainPage = (): JSX.Element => {
   return (
     <S.Main>
-      <S.Lines>
-        <Lines />
-      </S.Lines>
       <S.Header>
         <Typography tag="h1">Dmytro Onishchenko</Typography>
       </S.Header>
       <S.Content>
-        <About />
+        {/* <About />
         <Experience />
         <Education />
         <Summary />
-        <Skills />
-
-        <CommandLine />
+        <Skills /> */}
+        <Terminal />
       </S.Content>
-      <S.Command></S.Command>
+      <S.Command>
+        <CommandLine />
+      </S.Command>
     </S.Main>
   );
 };
