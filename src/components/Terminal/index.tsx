@@ -17,8 +17,6 @@ export const Terminal = memo(() => {
     (state: RootState) => state.commandLine.commands
   );
 
-  console.log(commands);
-
   return (
     <S.Container>
       {commands.map(({ id, value, result }) => (

@@ -1,4 +1,5 @@
 import { About } from "@modules/About";
+import { ThemeSwitch } from "@modules/ThemeSwitch";
 import { Education } from "@modules/Education";
 import { Summary } from "@modules/Summary";
 import { Experience } from "@modules/Experience";
@@ -6,6 +7,7 @@ import { Skills } from "@modules/Skills";
 
 import { CommandLine } from "@components/CommandLine";
 import { Terminal } from "@components/Terminal";
+import { Error } from "@components/Error";
 
 import { Typography } from "@ui/Typography";
 
@@ -16,7 +18,7 @@ const S = {
     background-color: #2b293c;
     width: 100%;
     height: 100%;
-    padding: 0 15px;
+    padding: 0;
     min-height: 100vh;
     margin: 0 auto;
     display: grid;
@@ -32,9 +34,9 @@ const S = {
   `,
   Content: styled.section`
     display: flex;
-    align-items: end;
+    flex-direction: column;
     grid-area: content;
-    border: 1px solid white;
+    justify-content: end;
   `,
   Command: styled.aside`
     grid-area: command;
@@ -48,8 +50,10 @@ export const MainPage = (): JSX.Element => {
         <Typography tag="h1">Dmytro Onishchenko</Typography>
       </S.Header>
       <S.Content>
-        {/* <About />
-        <Experience />
+        <ThemeSwitch />
+        <About />
+        <Error command="fsfafa" errorText="Some command not found" />
+        {/* <Experience />
         <Education />
         <Summary />
         <Skills /> */}

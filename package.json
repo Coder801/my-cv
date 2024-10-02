@@ -21,7 +21,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npx json-server server/db.json craco start",
+    "start": "concurrently \"npm run server\" \"craco start\"",
+    "server": "npx json-server -w server/db.json -p 3001",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject"
