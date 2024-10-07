@@ -4,10 +4,11 @@ import { Education } from "@modules/Education";
 import { Summary } from "@modules/Summary";
 import { Experience } from "@modules/Experience";
 import { Skills } from "@modules/Skills";
+import { Name } from "@modules/Name";
 
 import { CommandLine } from "@components/CommandLine";
 import { Terminal } from "@components/Terminal";
-import { Error } from "@components/Error";
+import { Message } from "@components/Message";
 
 import { Typography } from "@ui/Typography";
 
@@ -23,14 +24,10 @@ const S = {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 30px;
+    grid-template-rows: 1fr 30px;
     grid-template-areas:
-      "header"
       "content"
       "command";
-  `,
-  Header: styled.header`
-    grid-area: header;
   `,
   Content: styled.section`
     display: flex;
@@ -46,17 +43,14 @@ const S = {
 export const MainPage = (): JSX.Element => {
   return (
     <S.Main>
-      <S.Header>
-        <Typography tag="h1">Dmytro Onishchenko</Typography>
-      </S.Header>
       <S.Content>
         <ThemeSwitch />
+        <Name />
         <About />
-        <Error command="fsfafa" errorText="Some command not found" />
-        {/* <Experience />
-        <Education />
         <Summary />
-        <Skills /> */}
+        <Skills />
+        <Experience />
+        <Education />
         <Terminal />
       </S.Content>
       <S.Command>

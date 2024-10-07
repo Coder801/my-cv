@@ -3,10 +3,21 @@ import styled from "styled-components";
 
 import { Typography } from "@ui/Typography";
 
+import { Message } from "@components/Message";
+
+type CardProps = {
+  type?: "info" | "error";
+  title?: string;
+  children: ReactNode;
+};
+
 const S = {
-  Container: styled.article`
+  Container: styled.article<{ type: CardProps["type"] }>`
     display: block;
     width: 100%;
+    padding-right: 15px;
+    background-color: ${(props) => (props.type ? "none" : "black")};
+    border-right: 4px solid ${(props) => (props.type ? "red" : "black")};
   `,
   Title: styled(Typography).attrs({ tag: "h2" })`
     text-transform: lowercase;
@@ -23,14 +34,9 @@ const S = {
   `,
 };
 
-type CardProps = {
-  title: string;
-  children: ReactNode;
-};
-
-export const Card = ({ title, children }: CardProps) => (
-  <S.Container>
-    <S.Title>{title}</S.Title>
+export const Card = ({ type = "info", title, children }: CardProps) => (
+  <Message type={type}>
+    {title && <S.Title>{title}</S.Title>}
     <S.Content>{children}</S.Content>
-  </S.Container>
+  </Message>
 );

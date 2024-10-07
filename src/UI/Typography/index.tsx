@@ -29,49 +29,40 @@ const getHeader = (level: HeadersType): RuleSet => {
 
   return css`
     display: block;
-    font-family: var(--primary-font);
     font-weight: 500;
     font-style: normal;
     margin: 0;
     padding: 0;
-    color: var(--primary-color);
     font-size: ${size}px;
     letter-spacing: ${spacing}px;
+    font-family: ${(props) => props.theme.primaryFont};
+    color: ${(props) => props.theme.colors.primary};
   `;
 };
 
-const S: StyledType = {
-  h1: styled.h1`
-    ${getHeader("h1")}
-    color: red;
-  `,
-  h2: styled.h2`
-    ${getHeader("h2")}
-  `,
-  h3: styled.h3`
-    ${getHeader("h3")}
-  `,
-  h4: styled.h4`
-    ${getHeader("h4")}
-  `,
-  h5: styled.h5`
-    ${getHeader("h5")}
-  `,
-  h6: styled.h6`
-    ${getHeader("h6")}
-  `,
-  p: styled.p`
-    font-family: var(--secondary-font);
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    color: var(--text-color);
+const S: any = {};
 
-    & mark {
-      color: var(--highlight-color);
-      background-color: transparent;
+const ProxyS = new Proxy(S as StyledType, {
+  get(_, prop: TagType) {
+    if (["h1", "h2", "h3", "h4", "h5", "h6"].includes(prop)) {
+      return styled[prop]`
+        ${getHeader(prop as HeadersType)}
+      `;
     }
-  `,
-};
+
+    return styled.p`
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      color: ${(props) => props.theme.colors.text};
+      font-family: ${(props) => props.theme.secondaryFont};
+
+      & mark {
+        background-color: transparent;
+        color: ${(props) => props.theme.colors.highlight};
+      }
+    `;
+  },
+});
 
 export const Typography = ({
   tag = "p",
@@ -79,7 +70,7 @@ export const Typography = ({
   className,
 }: TypographyProps) =>
   createElement(
-    S[tag],
+    ProxyS[tag],
     {
       className: className,
     },
